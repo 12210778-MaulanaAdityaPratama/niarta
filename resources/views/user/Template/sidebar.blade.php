@@ -42,7 +42,7 @@
         </li>
         <li class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="" class="nav-link">
+                  <a href="{{ route('user.pekerjaan') }}" class="nav-link">
                     <i class="fa fa-signal" style="margin-right: 10px;"></i>
                     <p>
                         Progres Pekerjaan
@@ -53,7 +53,7 @@
         </li>
                     <li class="nav nav-treeview">
                         <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('user.informasi') }}" class="nav-link">
                             <i class="fa fa-info" style="margin-right: 10px;"></i>
                             <p> Informasi </p>
                         </a>
@@ -62,7 +62,7 @@
                     <li class="nav nav-treeview">
                       <li class="nav-item">
                       <a href="{{ route('user.profile') }}" class="nav-link">
-                          <i class="fa fa-info" style="margin-right: 10px;"></i>
+                          <i class="fa fa-key" style="margin-right: 10px;"></i>
                           <p> Ubah Password </p>
                       </a>
                       </li>

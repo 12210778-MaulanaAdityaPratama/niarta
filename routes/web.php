@@ -12,6 +12,10 @@ use App\Http\Controllers\user\UserFileController;
 use App\Http\Controllers\user\UserHomeController;
 use App\Http\Controllers\UbahPasswordController;
 use App\Http\Controllers\user\UserUbahPasswordController;
+use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\user\UserInformasiController;
+use App\Http\Controllers\PekerjaanController;
+use App\Http\Controllers\user\UserPekerjaanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,6 +67,11 @@ Route::middleware(['web'])->group(function () {
     Route::post('/profile', [UbahPasswordController::class, 'updateProfile']);
     Route::get('/user/profile', [UserUbahPasswordController::class, 'showProfile'])->name('user.profile');
     Route::post('/user/profile', [UserUbahPasswordController::class, 'updateProfile'])->name('user.change');
+    Route::get('/informasi', [InformasiController::class, 'index'])->name('informasi');
+    Route::get('/user/informasi', [UserInformasiController::class, 'index'])->name('user.informasi');
+    Route::get('/pekerjaan', [PekerjaanController::class, 'index'])->name('pekerjaan');
+    Route::get('/user/pekerjaan', [UserPekerjaanController::class, 'index'])->name('user.pekerjaan');
+
     
 });
 
@@ -88,6 +97,7 @@ Route::middleware(['web'])->group(function () {
     Route::put('/perizinan/update/{perizinan_id}', [PerizinanController::class, 'update'])->name('perizinan.update');
     Route::get('/profile', [UbahPasswordController::class, 'showProfile'])->name('profile');
     Route::post('/profile', [UbahPasswordController::class, 'updateProfile']);
+    Route::get('/informasi', [InformasiController::class, 'index'])->name('informasi');
     
 
     // ... (Tambahkan rute-rute admin lainnya di sini)

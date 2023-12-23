@@ -8,9 +8,11 @@ use App\Models\User;
 
 class LoginController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('login');
     }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -30,10 +32,13 @@ class LoginController extends Controller
             }
         }
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+        return back()
+            ->withInput($request->only('email'))
+            ->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ])->with('alert', 'wrong-password');
     }
+
     public function logout()
     {
         Auth::logout();

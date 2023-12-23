@@ -61,9 +61,15 @@
                     </div>
 
                     <!-- Password Baru -->
+                   
                     <div class="mb-3">
                         <label for="new_password" class="form-label">Password Baru:</label>
-                        <input type="password" class="form-control" name="new_password">
+                        <div class="input-group">
+                            <input type="password" class="form-control" name="new_password" id="new_password">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword">Lihat</button>
+                            </div>
+                        </div>
                         @error('new_password')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
